@@ -1,0 +1,27 @@
+<h3>增---<span ng-bind="name"></span></h3>
+<div class="row">
+<form name="userForm">
+    <div class="form-group">
+        <input type="text" class="form-control" required ng-model="userid" placeholder="userid"/>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" required ng-model="password" placeholder="Password"/>
+    </div>
+    <div class="form-group"><button type="button" class="btn btn-success" ng-click="add()">添加一条</button></div>
+</form>
+</div>
+<div class="row" style="margin-top:40px;">
+    <div ng-init="test=true">  
+      <div class="bar bar-header bar-royal">  
+        <div class="title">Test</div>  
+      </div>  
+      <div class="bar bar-subheader">  
+        <div class="button-bar">  
+          <a class="button" ng-class="test?'button-positive':''" ng-click="test=true">button1</a>  
+          <a class="button" ng-class="!test?'button-positive':''" ng-click="test=false">button2</a>  
+        </div>  
+      </div>  
+      <ion-content class="has-subheader">  
+         </ion-content>  
+    </div>  
+</div>
