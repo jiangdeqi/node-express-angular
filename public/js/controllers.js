@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
  // Managing the poll list
 app.controller('PollListCtrl',function($scope) {
@@ -33,6 +34,8 @@ app.controller('PollNewCtrl',function($scope) {
 
 
 =======
+=======
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 //index控制器
 app.controller('PollListCtrl', ['$scope',function($scope) {
     $scope.alert = '欢迎光临，杭州';
@@ -76,5 +79,9 @@ app.controller('NewCtrl', ['$scope',function($scope) {
 //item
 app.controller('ItemCtrl', ['$scope',function($scope) {
     $scope.name = '习近平';
+<<<<<<< HEAD
+}]);
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+=======
 }]);
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a

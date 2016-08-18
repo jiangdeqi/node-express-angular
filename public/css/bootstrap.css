@@ -1,7 +1,12 @@
 /*!
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
+=======
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1112,6 +1117,10 @@ a:focus {
 }
 a:focus {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  outline: thin dotted;
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
   outline: thin dotted;
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
@@ -2546,6 +2555,10 @@ input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  outline: thin dotted;
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
   outline: thin dotted;
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
@@ -3041,6 +3054,10 @@ select[multiple].input-lg {
 .btn:active.focus,
 .btn.active.focus {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  outline: thin dotted;
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
   outline: thin dotted;
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a

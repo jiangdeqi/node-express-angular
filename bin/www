@@ -6,7 +6,11 @@
 
 var app = require('../app');
 <<<<<<< HEAD
+<<<<<<< HEAD
 var debug = require('debug')('chihuo:server');
+=======
+var debug = require('debug')('nodejs:server');
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
 var debug = require('debug')('nodejs:server');
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a

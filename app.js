@@ -5,10 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+=======
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var mongodb = require('mongodb');//mongodb
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,7 +28,10 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 <<<<<<< HEAD
+<<<<<<< HEAD
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+=======
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 app.use(logger('dev'));
@@ -30,7 +39,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'public')));
+=======
+app.use(express.static(path.join(__dirname, '/')));
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
 app.use(express.static(path.join(__dirname, '/')));
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
@@ -46,8 +59,11 @@ app.use(function(req, res, next) {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // error handlers
 
+=======
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 // development error handler
@@ -72,10 +88,13 @@ app.use(function(err, req, res, next) {
   });
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.listen(3000);
 
 module.exports = app;
 =======
+=======
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 
 var  dbserver  = new mongodb.Server('localhost', 27017, {auto_reconnect:true});//mongodb 端口配置
 var  db = new mongodb.Db('test', dbserver, {safe:true});//mongodb数据库名字 服务
@@ -84,5 +103,9 @@ var server = app.listen(3000, function () {
     console.info('Express server listening on port ' + server.address().port);
 });//服务端口3000 
 
+<<<<<<< HEAD
+module.exports = app;
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+=======
 module.exports = app;
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a

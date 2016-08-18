@@ -1,15 +1,21 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "jiangweb",
   "version": "0.0.1",
   "moduleType": [
     "amd"
   ],
 =======
+=======
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
   "name": "iscsangular",
   "description": "",
   "main": "",
   "moduleType": [],
+<<<<<<< HEAD
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+=======
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
   "license": "MIT",
   "homepage": "",
@@ -18,6 +24,10 @@
     "node_modules",
     "bower_components",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "app/bower_components",
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 =======
     "app/bower_components",
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
@@ -25,6 +35,7 @@
     "tests"
   ],
   "dependencies": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "jquery": "^3.1.0",
     "angular": "^1.5.8",
@@ -34,6 +45,8 @@
     "font-awesome": "^4.6.3",
     "angular-route": "^1.5.8"
 =======
+=======
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
     "jquery": "^2.2.2",
     "angular-ui-router": "^0.2.18",
     "angular": "1.4.9",
@@ -46,6 +59,9 @@
     "ejs": "^1.0.0",
     "mongodb": ">= 1.3.19",
     "mongoose": ">= 3.8.0"
+<<<<<<< HEAD
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+=======
 >>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
   }
 }
