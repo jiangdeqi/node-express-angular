@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title 页面总览
+    link(rel='stylesheet' href='/public/css/bootstrap.css')
+    link(rel='stylesheet' href='/public/css/style.css')
+  body
+    div(style='padding:20px;width:400px;margin:0 auto;border:1px solid #ccc;')
+      form(action="homepage" method="post" )
+        p
+          span 用户名密码错误，请重新输入
+          br
+        p(style='display:table')
+          a.navbar-brand(href="/") 去首页
+          a.navbar-brand(href="login") login

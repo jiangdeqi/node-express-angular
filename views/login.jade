@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title Polls
+    link(rel='stylesheet' href='/public/css/bootstrap.css')
+    link(rel='stylesheet' href='/public/css/style.css')
+  body
+    div(style='padding:20px;width:400px;margin:0 auto;border:1px solid #ccc;')
+      form(action="index" method="post" )
+        p
+          span userId:
+          br
+          input(id="userid" name="userid" type="text") 
+        p
+          span password:
+          br
+          input(id="password" name="password" type="password")
+        p
+          input(type="submit" value="submit")

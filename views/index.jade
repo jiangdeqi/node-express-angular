@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+html(xmlns:ng="http://angularjs.org" lang="zh_CN" id="data-ng-app" data-ng-app="app")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title= title
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='/js/angular.js')
+    script(src='/js/angular-route.js')
+    script(src='/js/angular-resource.js')
+    
+    script(src='/js/jquery.js')
+    script(src='/js/app.js')
+    script(src='/js/controllers.js')
+  body(ng-controller="PollListCtrl")
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      div.navbar-header
+        a.navbar-brand(href='#/polls')= title
+        a.navbar-brand(href='#/poll')= title1
+        a.navbar-brand(href='#/new')= title3
+    div.container
+      ng-view
+
+=======
+doctype html
+html(lang='en', ng-app='polls')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title Polls
+    link(rel='stylesheet' href='/public/css/bootstrap.css')
+    link(rel='stylesheet' href='/public/css/style.css')
+    link(href='/favicon.ico')
+    script(src='/public/js/angular.js')
+    script(src='/public/js/angular-resource.js')
+    script(src='/public/js/angular-ui-router.js')
+    script(src='/public/js/app.js')
+    script(src='/public/js/controllers.js')
+    script(src='/public/js/services.js')
+  body(ng-controller="PollListCtrl")
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      div.navbar-header
+        a.navbar-brand(href="#index") index
+        a.navbar-brand(href="#list") list
+        a.navbar-brand(href="#item") item
+        a.navbar-brand(href="#new") new
+        a.navbar-brand(href="login") login
+    div.container
+      div(ui-view)
+      div(ng-bind='alert')
+      
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a

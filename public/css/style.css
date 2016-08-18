@@ -1,0 +1,45 @@
+<<<<<<< HEAD
+body {
+  padding-top: 50px;
+}
+
+.tab-content .lead {
+	margin-top: 20px;
+}
+
+.result-table {
+	margin: 20px 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.result-table td {
+	padding: 8px;
+}
+
+.result-table > tbody > tr > td:first-child {
+	width: 25%;
+	max-width: 300px;
+	text-align: right;
+}
+=======
+body { padding-top: 50px; }
+.result-table {
+  margin: 20px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+.result-table td { padding: 8px; }
+.result-table > tbody > tr > td:first-child {
+  width: 25%;
+  max-width: 300px;
+  text-align: right;
+}
+.result-table td table {
+  background-color: lightblue;
+  text-align: right;
+}
+a {
+  color: #00B7FF;
+}
+>>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
