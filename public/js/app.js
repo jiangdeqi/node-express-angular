@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-var app = angular.module('app', ["ngRoute"]);
-
-
-app.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/polls', {
-            templateUrl: 'partials/list.html',
-            controller: 'PollListCtrl'
-        }).when('/poll', {
-            templateUrl: 'partials/item.html',
-            controller: 'PollItemCtrl'
-        }).when('/new', {
-            templateUrl: 'partials/new.html',
-            controller: 'PollNewCtrl'
-        }).otherwise({
-            redirectTo: '/polls'
-        });
-    }]);
-=======
-=======
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 var app = angular.module('polls', [
 	'pollServices',
 	'ui.router'
@@ -59,7 +37,3 @@ app.config(
 	}
 );
 	
-<<<<<<< HEAD
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a

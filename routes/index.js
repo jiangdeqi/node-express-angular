@@ -1,17 +1,6 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Polls', title1:'item', title3:'new' });
-});
-
-module.exports = router;
-=======
-=======
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 var user = require('../models/user').user;
 
 /* GET home page. */
@@ -58,9 +47,6 @@ router.post('/addUser', function(req, res, callback) {
 });
 
 
-<<<<<<< HEAD
+
 module.exports = router;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-module.exports = router;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+

@@ -142,15 +142,9 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   Alert.VERSION = '3.3.7'
-=======
-  Alert.VERSION = '3.3.6'
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-  Alert.VERSION = '3.3.6'
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+
 
   Alert.TRANSITION_DURATION = 150
 
@@ -163,15 +157,11 @@ if (typeof jQuery === 'undefined') {
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     var $parent = $(selector === '#' ? [] : selector)
-=======
+
     var $parent = $(selector)
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-    var $parent = $(selector)
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+
 
     if (e) e.preventDefault()
 
@@ -267,15 +257,8 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   Button.VERSION  = '3.3.7'
-=======
-  Button.VERSION  = '3.3.6'
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-  Button.VERSION  = '3.3.6'
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 
   Button.DEFAULTS = {
     loadingText: 'loading...'

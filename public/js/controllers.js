@@ -1,41 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
- // Managing the poll list
-app.controller('PollListCtrl',function($scope) {
-    $scope.polls = [];
-    $scope.usname = '看看好是不';
-});
- // Voting / viewing poll results
-app.controller('PollItemCtrl',function($scope, $routeParams) {
-    $scope.poll = {};
-     $scope.vote = function() {};
-});
-
- // Creating a new poll
-app.controller('PollNewCtrl',function($scope) {
-     $scope.poll = {
-         question: '',
-         choices: [{
-             text: ''
-         }, {
-             text: ''
-         }, {
-             text: ''
-         }]
-     };
-     $scope.addChoice = function() {
-         $scope.poll.choices.push({
-             text: ''
-         });
-     };
-     $scope.createPoll = function() {};
-});
-
-
-=======
-=======
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
 //index控制器
 app.controller('PollListCtrl', ['$scope',function($scope) {
     $scope.alert = '欢迎光临，杭州';
@@ -79,9 +41,5 @@ app.controller('NewCtrl', ['$scope',function($scope) {
 //item
 app.controller('ItemCtrl', ['$scope',function($scope) {
     $scope.name = '习近平';
-<<<<<<< HEAD
+
 }]);
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-}]);
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
