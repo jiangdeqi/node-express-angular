@@ -1,9 +1,23 @@
 <div class="page-header">
 
-    <h1>修改---{{name}}</h1>
+    <h1>用户表---{{name}}</h1>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-内容
-    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>用户ID</th>
+                <th>用户密码</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in list">
+                <td>{{item.userid}}</td>
+                <td>{{item.password}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
 </div>

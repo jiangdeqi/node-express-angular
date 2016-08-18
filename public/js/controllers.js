@@ -11,7 +11,6 @@ app.controller('indexCtrl', ['$scope','$http',function($scope,$http) {
         
        $http.post('/addUser',myData)
         .success(function(data){
-            console.log(data);
             alert('添加成功');
         });
     }
@@ -29,8 +28,12 @@ app.controller('indexCtrl', ['$scope','$http',function($scope,$http) {
 }]);
 
 //list
-app.controller('ListCtrl', ['$scope',function($scope) {
+app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '姜德奇';
+    $http.post('/findUser','')
+        .success(function(data){
+            $scope.list = data;
+        });
 }]);
 
 //new

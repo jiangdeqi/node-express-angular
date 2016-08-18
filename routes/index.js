@@ -33,7 +33,6 @@ router.post('/index', function(req, res) {
 
 //新增用户
 router.post('/addUser', function(req, res, callback) {
-    //var data = req.body;
     var kitty = user(req.body);
     kitty.save(function (err ,doc) {
         if (err) {
@@ -42,10 +41,22 @@ router.post('/addUser', function(req, res, callback) {
             console.log('success');
         }
     });
+
     callback(res);
     return '';
 });
 
+//查询用户
+router.post('/findUser', function(req, res) {
+    var students = user.find(function(err,result){
+       if(err){
+         res.send(err);
+       }else{
+          res.json(result);
+       }
+   });
+
+});
 
 
 module.exports = router;
