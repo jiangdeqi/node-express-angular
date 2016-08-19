@@ -1,0 +1,14 @@
+﻿# Dist Directory
+/dist
+
+# Node modules
+/node_modules
+
+# Bower components
+
+/app/bower-components/*/*
+
+/typings/
+
+#ignore idea
+.idea

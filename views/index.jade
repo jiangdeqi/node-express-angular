@@ -12,14 +12,17 @@ html(lang='en', ng-app='polls')
     script(src='/public/js/app.js')
     script(src='/public/js/controllers.js')
     script(src='/public/js/services.js')
+    script(src='/public/js/ocLazyLoad.min.js')
+    
   body(ng-controller="PollListCtrl")
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      div.navbar-header
+      div.navbar-header.width-100
         a.navbar-brand(href="#index") index
         a.navbar-brand(href="#list") list
         a.navbar-brand(href="#item") item
         a.navbar-brand(href="#new") new
-        a.navbar-brand(href="login") login
+        a.navbar-brand.pull-right(href="login") login
+        a.navbar-brand(href="#charts") charts
     div.container
       ui-view
       div(ng-bind='alert')

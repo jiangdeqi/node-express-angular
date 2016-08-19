@@ -1,6 +1,7 @@
 var app = angular.module('polls', [
 	'pollServices',
-	'ui.router'
+	'ui.router',
+	'oc.lazyLoad'
 	])
 app.run(['$rootScope', '$state', '$stateParams',
 	function($rootScope, $state, $stateParams) {
@@ -32,6 +33,20 @@ app.config(
 				url: '/new',
   				templateUrl: '/public/partials/new.html',
 				controller:'NewCtrl'
+			})
+			.state('charts', {
+				url: '/charts',
+  				templateUrl: '/public/partials/charts.html',
+				controller:'chartsCtrl',
+				resolve: {
+					deps: ['$ocLazyLoad',
+						function($ocLazyLoad) {
+							return $ocLazyLoad.load([
+								'/public/js/echarts/echarts-all.js'
+							]);
+						}
+					]
+				}
 			});
         //$locationProvider.html5Mode(true); 
 	}
