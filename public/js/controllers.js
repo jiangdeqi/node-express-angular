@@ -13,7 +13,7 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
         };
         $http.post('/addUser', myData)
             .success(function(data) {
-                alert('添加成功');
+                console.log("添加成功");
             });
     }
 
@@ -22,10 +22,19 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
 //list
 app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '姜德奇';
-    $http.post('/findUser', '')
-        .success(function(data) {
+    $http.post('/findUser', '').success(function(data) {
             $scope.list = data;
+    });
+
+    $scope.del = function(item) {
+        var myid = {
+            userid: item.userid
+        }
+        $http.post('/delete', myid).success(function(data) {
+            console.log("删除成功");
+            location.reload(true);
         });
+    }
 }]);
 
 //new
@@ -42,32 +51,68 @@ app.controller('ItemCtrl', ['$scope', function($scope) {
 
 
 //charts
-app.controller('chartsCtrl', ['$scope','$interval','$timeout', function($scope ,$interval ,$timeout) {
+app.controller('chartsCtrl', ['$scope', '$interval', '$timeout', function($scope, $interval, $timeout) {
 
     var myChart = echarts.init(document.getElementById('main'));
-    // 指定图表的配置项和数据
-    var option = {
+    var xAxisData = [];
+    var data1 = [];
+    var data2 = [];
+    for (var i = 0; i < 100; i++) {
+        xAxisData.push('类目' + i);
+        data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
+        data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
+    }
+
+    option = {
         title: {
-            text: 'ECharts 入门示例'
+            text: '柱状图动画延迟'
+        },
+        legend: {
+            data: ['bar', 'bar2'],
+            align: 'left'
+        },
+        toolbox: {
+            // y: 'bottom',
+            feature: {
+                magicType: {
+                    type: ['stack', 'tiled']
+                },
+                dataView: {},
+                saveAsImage: {
+                    pixelRatio: 2
+                }
+            }
         },
         tooltip: {},
-        legend: {
-            data:['销量']
-        },
         xAxis: {
-            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            data: xAxisData,
+            silent: false,
+            splitLine: {
+                show: false
+            }
         },
         yAxis: {},
         series: [{
-            name: '销量',
+            name: 'bar',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-        }]
+            data: data1,
+            animationDelay: function(idx) {
+                return idx * 10;
+            }
+        }, {
+            name: 'bar2',
+            type: 'bar',
+            data: data2,
+            animationDelay: function(idx) {
+                return idx * 10 + 100;
+            }
+        }],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function(idx) {
+            return idx * 5;
+        }
     };
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
-        
+
 }]);
-
-
-

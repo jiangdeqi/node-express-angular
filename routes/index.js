@@ -55,9 +55,21 @@ router.post('/findUser', function(req, res) {
           res.json(result);
        }
    });
-
 });
 
+//删除
+router.post("/delete", function(req, res, callback){  
+    console.log(req.body.userid);  
+
+    user.find({'userid':req.body.userid},function(err,doc){  
+        if(!doc){  
+            return next(new NotFound("Doc not found"))  
+        }else{  
+            doc[0].remove();
+        }
+        callback(res);
+    });  
+});  
 
 module.exports = router;
 
