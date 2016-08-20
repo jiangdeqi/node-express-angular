@@ -16,7 +16,7 @@ app.config(
             $stateProvider
 			.state('index', {
 				url: '/index',
-  				templateUrl: 'public/partials/index.html',
+  				templateUrl: '/public/partials/index.html',
 				controller:'indexCtrl'
 			})
 			.state('list', {

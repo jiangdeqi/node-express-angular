@@ -7,13 +7,15 @@ app.controller('PollListCtrl', ['$scope', function($scope) {
 app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '大奇山森林公园';
     $scope.add = function() {
-        var myData = {
-            userid: $scope.userid,
-            password: $scope.password
-        };
-        $http.post('/addUser', myData).success(function(data) {
-            console.log("添加成功" + ddds);
-        });
+        if($scope.userid !== undefined && $scope.password !== undefined){
+            var myData = {
+                userid: $scope.userid,
+                password: $scope.password
+            };
+            $http.post('/addUser', myData).success(function(data) {
+                console.log("添加成功");
+            });
+        }
     }
 }]);
 
