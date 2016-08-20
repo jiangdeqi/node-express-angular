@@ -5,7 +5,8 @@ var db = mongoose.connect('mongodb://localhost/test',{},function (err, res) {
     }else{
         console.log(res +'数据库启动成功');
     }
-});//；连接数据库
+});//连接数据库
+
 var Schema = mongoose.Schema;	//	创建模型
 var userScheMa = new Schema({
     userid: String,

@@ -29,6 +29,26 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
 var  dbserver  = new mongodb.Server('localhost', 27017, {auto_reconnect:true}); //mongodb 端口配置
 var  db = new mongodb.Db('test', dbserver, {safe:true}); //mongodb数据库名字服务
 

@@ -41,7 +41,6 @@ router.post('/addUser', function(req, res, callback) {
             console.log('success');
         }
     });
-
     callback(res);
     return '';
 });
@@ -59,8 +58,6 @@ router.post('/findUser', function(req, res) {
 
 //删除
 router.post("/delete", function(req, res, callback){  
-    console.log(req.body.userid);  
-
     user.find({'userid':req.body.userid},function(err,doc){  
         if(!doc){  
             return next(new NotFound("Doc not found"))  

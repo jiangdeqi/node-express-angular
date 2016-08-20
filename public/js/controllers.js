@@ -11,12 +11,10 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
             userid: $scope.userid,
             password: $scope.password
         };
-        $http.post('/addUser', myData)
-            .success(function(data) {
-                console.log("添加成功");
-            });
+        $http.post('/addUser', myData).success(function(data) {
+            console.log("添加成功" + ddds);
+        });
     }
-
 }]);
 
 //list
