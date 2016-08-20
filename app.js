@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -30,33 +29,11 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
-
-var  dbserver  = new mongodb.Server('localhost', 27017, {auto_reconnect:true});//mongodb 端口配置
-var  db = new mongodb.Db('test', dbserver, {safe:true});//mongodb数据库名字 服务
+var  dbserver  = new mongodb.Server('localhost', 27017, {auto_reconnect:true}); //mongodb 端口配置
+var  db = new mongodb.Db('test', dbserver, {safe:true}); //mongodb数据库名字服务
 
 var server = app.listen(3000, function () {
     console.info('Express server listening on port ' + server.address().port);
-});//服务端口3000 
+}); //服务端口3000 
 
 module.exports = app;
