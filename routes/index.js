@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../models/db');
+var mongoose = require("mongoose");
+require('../models/user');
 
-var user = require('../models/user').user;
+var user = mongoose.model('users');
+var books = mongoose.model('books');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -12,6 +16,34 @@ router.get('/', function(req, res) {
 router.get('/login', function(req, res) {
  	 res.render('login', { title: 'login' });
 });
+
+/*hompage*/
+router.post('/index', function(req, res) {
+    var query_doc = {userid: req.body.userid, password: req.body.password};
+    (function(){
+        user.count(query_doc, function(err, doc){
+            if (doc == 1) {
+                res.render('index', { title: 'index' });
+            } else {
+                res.render('homepage', { title: 'homepage2' });
+            }
+        });
+    })(query_doc);
+});
+
+
+//books
+router.post('/books', function(req, res) {
+    books.find(function(err,result){
+       if(err){
+         res.send(err);
+       }else{
+          res.json(result);
+       }
+   });
+});
+
+
 
 /* 用户登录 */
 router.post('/ucenter', function(req, res) {
@@ -30,20 +62,6 @@ router.post('/ucenter', function(req, res) {
 });
 
 
-
-/*hompage*/
-router.post('/index', function(req, res) {
-    var query_doc = {userid: req.body.userid, password: req.body.password};
-    (function(){
-        user.count(query_doc, function(err, doc){
-            if (doc == 1) {
-                res.render('index', { title: 'index' });
-            } else {
-                res.render('homepage', { title: 'homepage2' });
-            }
-        });
-    })(query_doc);
-});
 
 //新增用户
 router.post('/addUser', function(req, res, callback) {

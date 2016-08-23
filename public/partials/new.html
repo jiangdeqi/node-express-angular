@@ -1,10 +1,31 @@
 
 <div class="page-header">
-    <h1>查询---{{name}}</h1>
+    <h1>查询书籍---{{name}}</h1>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-内容
-    </div>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>访问数</th>
+                <th>评论数</th>
+                <th>创建时间</th>
+                <th>作者</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in list">
+                <td>{{item.title}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.visitedCount}}</td>
+                <td>{{item.commentCount}}</td>
+                <td>{{item.createdOn | date:'yyyy-MM-dd'}}</td>
+                <td>{{item.author}}</td>
+                <td><button class="btn btn-primary" ng-click="del(item)">删除</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-

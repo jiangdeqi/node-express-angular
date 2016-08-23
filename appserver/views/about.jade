@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title Polls
+    link(rel='stylesheet' href='/public/css/bootstrap.css')
+    link(rel='stylesheet' href='/public/css/style.css')
+    script(src='/public/js/assets/jquery.js')
+    script(src='/public/js/login.js')
+  body
+    div(style='padding:20px;width:400px;margin:0 auto;border:1px solid #ccc;')
+      form(action="ucenter" method="post" )
+        p
+          span userId:
+          br
+          input(id="userid" name="userid" required class="form-control" type="text") 
+        p
+          span password:
+          br
+          input(id="password" name="password" required class="form-control" type="password")
+        p
+          input(type="submit" value="submit" class="btn btn-info")

@@ -38,8 +38,13 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
 }]);
 
 //new
-app.controller('NewCtrl', ['$scope', function($scope) {
+app.controller('NewCtrl', ['$scope','$http', function($scope, $http) {
     $scope.name = '网仓三号。。';
+
+    $http.post('/books', '').success(function(data) {
+        $scope.list = data;
+    });
+
 }]);
 
 //item

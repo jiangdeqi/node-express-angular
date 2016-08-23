@@ -1,0 +1,9 @@
+extends layout
+
+block content
+ h3=title
+
+ if(status==404||status==500)
+  .alert.alert-danger= content
+ else if(status==200||status==201)
+.alert.alert-success= content
