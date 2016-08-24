@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='email=no')
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0', name='viewport')
+    title 多人聊天室
+    link(rel='stylesheet', type='text/css', href='/public/css/stock.css')
+    script(src='/public/js/assets/socket.io.js')
+  body
+    #loginbox
+      div(style='width:260px;margin:200px auto;')
+        | 请先输入你在聊天室的昵称
+        br
+        br
+        input#username(type='text', style='width:180px;', placeholder='请输入用户名', name='username')
+        input(type='button', style='width:50px;', value='提交', onclick='CHAT.usernameSubmit();')
+    #chatbox(style='display:none;')
+      div(style='background:#3d3d3d;height: 28px; width: 100%;font-size:12px;')
+        div(style='line-height: 28px;color:#fff;')
+          span(style='text-align:left;margin-left:10px;') 网仓技术聊天室
+          span(style='float:right; margin-right:10px;')
+            span#showusername
+            |  
+            a(href='javascript:;', onclick='CHAT.logout()', style='color:#fff;') 退出
+      #doc
+        #chat
+          #message.message
+            #onlinecount(style='background:#EFEFF4; font-size:12px; margin-top:10px; margin-left:10px; color:#666;')
+          .input-box
+            .input
+              input#content(type='text', maxlength='140', placeholder='请输入聊天内容，按Ctrl提交', name='content')
+            .action
+              button#mjr_send(type='button', onclick='CHAT.submit();') 提交
+           
+    script(type='text/javascript', src='/models/index-server.js')

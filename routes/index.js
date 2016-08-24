@@ -16,6 +16,10 @@ router.get('/', function(req, res) {
 router.get('/login', function(req, res) {
  	 res.render('login', { title: 'login' });
 });
+/*logout 页面*/
+router.get('/logout', function(req, res) {
+ 	 res.render('logout', { title: 'io聊天室' });
+});
 
 /*hompage*/
 router.post('/index', function(req, res) {
@@ -41,6 +45,7 @@ router.post('/books', function(req, res) {
           res.json(result);
        }
    });
+
 });
 
 

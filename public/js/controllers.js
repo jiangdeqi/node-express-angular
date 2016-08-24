@@ -3,7 +3,7 @@ app.controller('PollListCtrl', ['$scope', function($scope) {
     $scope.alert = '欢迎光临，杭州';
 }]);
 
-
+//index
 app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '大奇山森林公园';
     $scope.add = function() {
@@ -14,6 +14,7 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
             };
             $http.post('/addUser', myData).success(function(data) {
                 console.log("添加成功");
+                
             });
         }
     }
@@ -21,7 +22,7 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
 
 //list
 app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
-    $scope.name = '姜德奇';
+    $scope.name = '列表展示，删除功能';
     $http.post('/findUser', '').success(function(data) {
             $scope.list = data;
     });
@@ -39,7 +40,7 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
 
 //new
 app.controller('NewCtrl', ['$scope','$http', function($scope, $http) {
-    $scope.name = '网仓三号。。';
+    $scope.name = '书籍列表。。';
 
     $http.post('/books', '').success(function(data) {
         $scope.list = data;

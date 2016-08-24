@@ -34,3 +34,9 @@ footer {
    text-align: center;
    background: #efefef;
 }
+
+
+
+ol, ul {
+    list-style: none;
+}
