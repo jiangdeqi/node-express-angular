@@ -13,8 +13,11 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
                 password: $scope.password
             };
             $http.post('/addUser', myData).success(function(data) {
-                console.log("添加成功");
-                
+                if(data == 'success'){
+                    console.log("添加成功");
+                }else{
+                    console.log("添加失败");
+                }
             });
         }
     }
@@ -32,8 +35,10 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
             userid: item.userid
         }
         $http.post('/delete', myid).success(function(data) {
-            console.log("删除成功");
-            location.reload(true);
+            if(data == 'success'){
+                console.log("删除成功");
+                location.reload(true);
+            }
         });
     }
 }]);

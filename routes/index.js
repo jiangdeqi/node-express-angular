@@ -69,17 +69,16 @@ router.post('/ucenter', function(req, res) {
 
 
 //新增用户
-router.post('/addUser', function(req, res, callback) {
+router.post('/addUser', function(req, res) {
     var kitty = user(req.body);
     kitty.save(function (err ,doc) {
         if (err) {
             console.log(err + '错误');
+            res.send('error');
         } else {
-            console.log('success');
+            res.send('success');
         }
     });
-    callback(res);
-    return '';
 });
 
 //查询用户
@@ -100,8 +99,8 @@ router.post("/delete", function(req, res, callback){
             return next(new NotFound("Doc not found"))  
         }else{  
             doc[0].remove();
+            res.send('success');
         }
-        callback(res);
     });  
 });  
 
