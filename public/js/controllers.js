@@ -7,15 +7,15 @@ app.controller('PollListCtrl', ['$scope', function($scope) {
 app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '大奇山森林公园';
     $scope.add = function() {
-        if($scope.userid !== undefined && $scope.password !== undefined){
+        if ($scope.userid !== undefined && $scope.password !== undefined) {
             var myData = {
                 userid: $scope.userid,
                 password: $scope.password
             };
             $http.post('/addUser', myData).success(function(data) {
-                if(data == 'success'){
+                if (data == 'success') {
                     console.log("添加成功");
-                }else{
+                } else {
                     console.log("添加失败");
                 }
             });
@@ -27,7 +27,7 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
 app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '列表展示，删除功能';
     $http.post('/findUser', '').success(function(data) {
-            $scope.list = data;
+        $scope.list = data;
     });
 
     $scope.del = function(item) {
@@ -35,7 +35,7 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
             userid: item.userid
         }
         $http.post('/delete', myid).success(function(data) {
-            if(data == 'success'){
+            if (data == 'success') {
                 console.log("删除成功");
                 location.reload(true);
             }
@@ -44,59 +44,60 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
 }]);
 
 //书籍列表new
-app.controller('NewCtrl', ['$scope','$http','dialog', function($scope, $http, dialog) {
+app.controller('NewCtrl', ['$scope', '$http', 'dialog', function($scope, $http, dialog) {
     $scope.name = '书籍列表。。';
 
     $http.post('/books', '').success(function(data) {
         $scope.list = data;
     });
 
-    $scope.edit = function(item){
+    $scope.edit = function(item) {
         dialog.show('public/partials/new-edit.html', 'newEdit', 'lg', {
-            item : function() {
+            item: function() {
                 return item;
             }
         }, function(data) {
             if (data == "save") {
-                
+
             }
             return false;
         })
     }
-    
+
 }]);
 
 //newEdit
-app.controller('newEdit', ['$scope' ,'$compile' ,'$uibModalInstance','item', '$http',
-function( $scope, $compile ,$uibModalInstance, item, $http) {
-    $scope.query = item;
-    
-    $scope.close = function(){
-        $uibModalInstance.close('save');
-    }
+app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$http',
+    function($scope, $compile, $uibModalInstance, item, $http) {
+        $scope.query = item;
 
-    $scope.save = function(){
+        $scope.close = function() {
+            $uibModalInstance.close('save');
+        }
 
-        $scope.item = {}
-        $scope.item.title = $scope.query.title;
-        $scope.item.type = $scope.query.type;
-        $scope.item.visitedCount = $scope.query.visitedCount;
-        $scope.item.commentCount = $scope.query.commentCount;
-        $scope.item.createdOn = parseInt($scope.query.createdOn);
-        $scope.item.author = $scope.query.author;
-        
-        $http.post('/upDataBooks', $scope.item).success(function(data) {
-            if(data == 'success'){
-                console.log("添加成功");
-                $uibModalInstance.close('save');
-            }else{
-                 console.log(data.errmsg);
-                 console.log(data.message);
-                console.log("添加失败");
-            }
-        });
+        $scope.save = function() {
+
+            $scope.item = {}
+            $scope.item.title = $scope.query.title;
+            $scope.item.type = $scope.query.type;
+            $scope.item.visitedCount = $scope.query.visitedCount;
+            $scope.item.commentCount = $scope.query.commentCount;
+            $scope.item.createdOn = parseInt($scope.query.createdOn);
+            $scope.item.author = $scope.query.author;
+
+            $http.post('/upDataBooks', $scope.item).success(function(data) {
+                if (data == 'success') {
+                    console.log("添加成功");
+                    $uibModalInstance.close('save');
+                } else {
+                    console.log(data.errmsg);
+                    console.log(data.message);
+                    console.log("添加失败");
+                }
+            });
+        }
     }
-}]);
+]);
 
 
 
