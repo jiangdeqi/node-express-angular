@@ -76,14 +76,22 @@ function( $scope, $compile ,$uibModalInstance, item, $http) {
     }
 
     $scope.save = function(){
-        $scope.query.createdOn = parseInt($scope.query.createdOn);
-        $scope.query;
-debugger
-        $http.post('/upDataBooks', $scope.query).success(function(data) {
+
+        $scope.item = {}
+        $scope.item.title = $scope.query.title;
+        $scope.item.type = $scope.query.type;
+        $scope.item.visitedCount = $scope.query.visitedCount;
+        $scope.item.commentCount = $scope.query.commentCount;
+        $scope.item.createdOn = parseInt($scope.query.createdOn);
+        $scope.item.author = $scope.query.author;
+        
+        $http.post('/upDataBooks', $scope.item).success(function(data) {
             if(data == 'success'){
                 console.log("添加成功");
                 $uibModalInstance.close('save');
             }else{
+                 console.log(data.errmsg);
+                 console.log(data.message);
                 console.log("添加失败");
             }
         });
