@@ -1,14 +1,17 @@
 var app = angular.module('polls', [
 	'pollServices',
 	'ui.router',
-	'oc.lazyLoad'
-	])
+	'oc.lazyLoad',
+	'ui.bootstrap'
+]);
+
 app.run(['$rootScope', '$state', '$stateParams',
 	function($rootScope, $state, $stateParams) {
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
 	}
 ]);
+
 app.config(
 	function($urlRouterProvider,$stateProvider ,$locationProvider) {
 		$urlRouterProvider

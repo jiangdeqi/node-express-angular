@@ -1,0 +1,24 @@
+<panel dialog>
+    <phead>
+        编辑书籍
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </phead>
+    <pbody>
+        <div class="pad30A">
+            <div class="form-group"><input ng-model="query.title" class="form-control" /></div>
+            <div class="form-group"><input ng-model="query.type" class="form-control" /></div>
+            <div class="form-group"><input ng-model="query.visitedCount" class="form-control" /></div>
+            <div class="form-group"><input ng-model="query.commentCount" class="form-control" /></div>
+            <div class="form-group"><input ng-model="query.createdOn" class="form-control" /></div>
+            <div class="form-group"><input ng-model="query.author" class="form-control" /></div>
+            
+
+        </div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-right">
+            <button class="btn btn-warning" ng-click="save()">保存</button>
+            <button class="btn btn-default" ng-click="close()">取消</button><!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel>

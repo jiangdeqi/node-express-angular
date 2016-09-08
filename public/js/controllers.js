@@ -23,7 +23,7 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
     }
 }]);
 
-//list
+//用户列表list
 app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '列表展示，删除功能';
     $http.post('/findUser', '').success(function(data) {
@@ -43,15 +43,40 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
     }
 }]);
 
-//new
-app.controller('NewCtrl', ['$scope','$http', function($scope, $http) {
+//书籍列表new
+app.controller('NewCtrl', ['$scope','$http','dialog', function($scope, $http, dialog) {
     $scope.name = '书籍列表。。';
 
     $http.post('/books', '').success(function(data) {
         $scope.list = data;
     });
 
+    $scope.edit = function(item){
+        dialog.show('public/partials/new-edit.html', 'newEdit', 'lg', {
+            item : function() {
+                return item;
+            }
+        }, function(data) {
+            if (data == "save") {
+                
+            }
+            return false;
+        })
+    }
 }]);
+
+//newEdit
+app.controller('newEdit', ['$scope' ,'$compile' ,'$uibModalInstance','item', 
+function( $scope, $compile ,$uibModalInstance, item) {
+    $scope.query = item;
+    
+    $scope.close = function(){
+        $uibModalInstance.close('save');
+    }
+
+}]);
+
+
 
 //item
 app.controller('ItemCtrl', ['$scope', function($scope) {
