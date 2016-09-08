@@ -3,7 +3,7 @@ app.controller('PollListCtrl', ['$scope', function($scope) {
     $scope.alert = '欢迎光临，杭州';
 }]);
 
-//index
+//用户添加index
 app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '大奇山森林公园';
     $scope.add = function() {
@@ -63,17 +63,31 @@ app.controller('NewCtrl', ['$scope','$http','dialog', function($scope, $http, di
             return false;
         })
     }
+    
 }]);
 
 //newEdit
-app.controller('newEdit', ['$scope' ,'$compile' ,'$uibModalInstance','item', 
-function( $scope, $compile ,$uibModalInstance, item) {
+app.controller('newEdit', ['$scope' ,'$compile' ,'$uibModalInstance','item', '$http',
+function( $scope, $compile ,$uibModalInstance, item, $http) {
     $scope.query = item;
     
     $scope.close = function(){
         $uibModalInstance.close('save');
     }
 
+    $scope.save = function(){
+        $scope.query.createdOn = parseInt($scope.query.createdOn);
+        $scope.query;
+debugger
+        $http.post('/upDataBooks', $scope.query).success(function(data) {
+            if(data == 'success'){
+                console.log("添加成功");
+                $uibModalInstance.close('save');
+            }else{
+                console.log("添加失败");
+            }
+        });
+    }
 }]);
 
 
