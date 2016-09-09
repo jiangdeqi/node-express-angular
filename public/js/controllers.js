@@ -66,7 +66,7 @@ app.controller('NewCtrl', ['$scope', '$http', 'dialog', function($scope, $http, 
 
 }]);
 
-//newEdit
+//newEdit－－书籍编辑页面
 app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$http',
     function($scope, $compile, $uibModalInstance, item, $http) {
         $scope.query = item;
