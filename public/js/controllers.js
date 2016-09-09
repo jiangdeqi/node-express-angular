@@ -101,9 +101,21 @@ app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$
 
 
 
-//item
-app.controller('ItemCtrl', ['$scope', function($scope) {
-    $scope.name = '习平';
+//查询用户
+app.controller('ItemCtrl', ['$scope', '$http', function($scope, $http) {
+    $scope.name = '模糊查询用户';
+
+    $scope.seach = function() {
+        $http.post('/seachUser', {
+            'userid': $scope.test
+        }).success(function(data) {
+            if (data.code == 'success') {
+                $scope.list = data.data;
+            } else {
+
+            }
+        });
+    }
 
 }]);
 

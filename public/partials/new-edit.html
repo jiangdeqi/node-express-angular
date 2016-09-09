@@ -5,20 +5,37 @@
     </phead>
     <pbody>
         <div class="pad30A">
-            <div class="form-group"><input ng-model="query.title" class="form-control" /></div>
-            <div class="form-group"><input ng-model="query.type" class="form-control" /></div>
-            <div class="form-group"><input ng-model="query.visitedCount" class="form-control" /></div>
-            <div class="form-group"><input ng-model="query.commentCount" class="form-control" /></div>
-            <div class="form-group"><input ng-model="query.createdOn" class="form-control" /></div>
-            <div class="form-group"><input ng-model="query.author" class="form-control" /></div>
-            
-
+            <div class="form-group clearfix">
+                <div class="col-md-2 text-right">名称</div>
+                <div class="col-md-10"><input ng-model="query.title" class="form-control" /></div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="col-md-2 text-right">类型</div>
+                <div class="col-md-10"><input ng-model="query.type" class="form-control" /></div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="col-md-2 text-right">访问数</div>
+                <div class="col-md-10"><input ng-model="query.visitedCount" class="form-control" /></div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="col-md-2 text-right">评论数</div>
+                <div class="col-md-10"><input ng-model="query.commentCount" class="form-control" /></div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="col-md-2 text-right">创建时间</div>
+                <div class="col-md-10"><input ng-model="query.createdOn" class="form-control" /></div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="col-md-2 text-right">作者</div>
+                <div class="col-md-10"><input ng-model="query.author" class="form-control" /></div>
+            </div>
         </div>
     </pbody>
     <pfoot>
         <div style="height: 40px;" class="text-right">
             <button class="btn btn-warning" ng-click="save()">保存</button>
-            <button class="btn btn-default" ng-click="close()">取消</button><!-- 关闭 -->
+            <button class="btn btn-default" ng-click="close()">取消</button>
+            <!-- 关闭 -->
         </div>
     </pfoot>
 </panel>

@@ -5,6 +5,7 @@ html(lang='en', ng-app='polls')
     title Polls
     link(rel='stylesheet' href='/public/css/bootstrap.css')
     link(rel='stylesheet' href='/public/css/style.css')
+    link(rel='stylesheet' href='/public/css/page.css')
     link(href='/favicon.ico')
     script(src='/public/js/assets/jquery.js')
     script(src='/public/js/assets/bootstrap.js')
@@ -20,10 +21,10 @@ html(lang='en', ng-app='polls')
     
   body(ng-controller="PollListCtrl")
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      div.navbar-header.width-100
+      div.navbar-header.width-100s
         a.navbar-brand(href="#index") 用户新增
         a.navbar-brand(href="#list") 用户列表
-        a.navbar-brand(href="#item") item
+        a.navbar-brand(href="#item") 用户查询
         a.navbar-brand(href="#new") 书籍
         a.navbar-brand(href="logout") 聊天室
         a.navbar-brand.pull-right(href="login") login

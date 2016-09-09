@@ -105,13 +105,26 @@ router.post('/addUser', function(req, res) {
 
 //查询用户
 router.post('/findUser', function(req, res) {
-    var students = user.find(function(err, result) {
+    user.find(function(err, result) {
         if (err) {
             res.send(err);
         } else {
             res.json(result);
         }
     });
+});
+
+//搜索用户－展示列表
+router.post('/seachUser', function(req, res) {
+    pattern = new RegExp("^.*"+req.body.userid+".*$");
+     user.find({'userid':pattern}, function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({'code':'success','data':result});
+            
+        }
+     });
 });
 
 //删除
