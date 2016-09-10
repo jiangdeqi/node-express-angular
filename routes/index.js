@@ -61,7 +61,14 @@ router.post('/books', function(req, res) {
 
 //updatabooks更新books数据
 router.post('/upDataBooks', function(req, res) {
-    books.update(req.body._id, req.body, function(err, docs) {
+    var item = {}
+    item.title = req.body.title;
+    item.type = req.body.type;
+    item.visitedCount = req.body.visitedCount;
+    item.commentCount = req.body.commentCount;
+    item.createdOn = req.body.createdOn;
+    item.author = req.body.author;
+    books.update({"_id":req.body._id}, item, function(err, docs) {
         if (err) {
             res.send(err);
         } else {

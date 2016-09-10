@@ -77,15 +77,7 @@ app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$
 
         $scope.save = function() {
 
-            $scope.item = {}
-            $scope.item.title = $scope.query.title;
-            $scope.item.type = $scope.query.type;
-            $scope.item.visitedCount = $scope.query.visitedCount;
-            $scope.item.commentCount = $scope.query.commentCount;
-            $scope.item.createdOn = parseInt($scope.query.createdOn);
-            $scope.item.author = $scope.query.author;
-
-            $http.post('/upDataBooks', $scope.item).success(function(data) {
+            $http.post('/upDataBooks', $scope.query).success(function(data) {
                 if (data == 'success') {
                     console.log("添加成功");
                     $uibModalInstance.close('save');
