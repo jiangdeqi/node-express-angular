@@ -90,8 +90,6 @@ app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$
                     console.log("添加成功");
                     $uibModalInstance.close('save');
                 } else {
-                    console.log(data.errmsg);
-                    console.log(data.message);
                     console.log("添加失败");
                 }
             });
@@ -112,7 +110,7 @@ app.controller('ItemCtrl', ['$scope', '$http', function($scope, $http) {
             if (data.code == 'success') {
                 $scope.list = data.data;
             } else {
-
+                console.log("添加失败");
             }
         });
     }
