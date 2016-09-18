@@ -1,6 +1,7 @@
 //index控制器
 app.controller('PollListCtrl', ['$scope', function($scope) {
     $scope.alert = '欢迎光临，杭州';
+    $scope.name = localStorage.getItem("user");
 }]);
 
 //用户添加index

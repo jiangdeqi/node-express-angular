@@ -6,8 +6,10 @@ $(function(){
              data: {user:$("#userid").val(), pwd:$("#password").val()},
              success: function(data){
                  if(data == 'success'){
-                    window.location.href ="/#/index";
+                     localStorage.setItem("user",$("#userid").val());
+                     
                     console.log("前台成功");
+                    window.location.href ="/#/index";
                  }
                  if(data == 'error'){
                      console.log("用户名密码错误");
