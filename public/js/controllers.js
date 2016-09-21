@@ -58,10 +58,7 @@ app.controller('NewCtrl', ['$scope', '$http', 'dialog', function($scope, $http, 
                 return item;
             }
         }, function(data) {
-            if (data == "save") {
-
-            }
-            return false;
+            //回传
         })
     }
 
@@ -90,8 +87,6 @@ app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$
     }
 ]);
 
-
-
 //查询用户
 app.controller('ItemCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '模糊查询用户';
@@ -110,6 +105,32 @@ app.controller('ItemCtrl', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
+
+//留言板
+app.controller('msgBoardCtrl', ['$scope', '$http', function($scope, $http) {
+    $scope.name = '留言板';
+
+    $http.post('/findMsgBoard', '').success(function(data) {
+        $scope.list = data;
+    });
+
+    $scope.submit = function() {
+        if ($scope.title !== undefined && $scope.content !== undefined) {
+            $http.post('/addMsgBoard', {
+                'user': 'jiangdeqi' ,
+                'title': $scope.title ,
+                'content': $scope.content ,
+                'date': new Date()
+            }).success(function(data) {
+                if (data.code == 'success') {
+                    location.reload();
+                } else {
+                    console.log("添加失败");
+                }
+            });
+        }
+    }
+}]);
 
 
 //charts

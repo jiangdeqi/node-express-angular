@@ -6,6 +6,8 @@ require('../models/user');
 
 var user = mongoose.model('users');
 var books = mongoose.model('books');
+var msgBoard = mongoose.model('msgBoard');
+
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -108,6 +110,7 @@ router.post('/addUser', function(req, res) {
     });
 });
 
+
 //查询用户
 router.post('/findUser', function(req, res) {
     user.find(function(err, result) {
@@ -145,5 +148,35 @@ router.post("/delete", function(req, res, callback) {
         }
     });
 });
+
+//新增留言
+router.post('/addMsgBoard', function(req, res) {
+    var msg = msgBoard(req.body);
+    msg.save(function(err, doc) {
+        if (err) {
+            console.log(err + '错误');
+            res.send('error');
+        } else {
+            res.send({'code':'success'});
+        }
+    });
+});
+
+//展示留言
+router.post('/findMsgBoard', function(req, res) {
+    msgBoard.find(function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(result);
+        }
+    });
+});
+
+
+
+
+
+
 
 module.exports = router;

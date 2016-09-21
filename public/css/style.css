@@ -46,3 +46,7 @@ ol, ul {
 table {
   font-size: 12px;
 }
+
+.border-bottom {
+  border-bottom: 1px solid #eee;
+}

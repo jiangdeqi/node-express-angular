@@ -19,5 +19,16 @@ var bookSchema = new mongoose.Schema({
     author: String
 });
 
+var msgBoard = new mongoose.Schema({
+    title: String,
+    user: String,
+    content: String,
+    date: {
+        type: Date,
+        default: Date.now
+    }
+});
+
 mongoose.model('users', userScheMa); //	与users集合关联
 mongoose.model('books', bookSchema); //	与books集合关联
+mongoose.model('msgBoard', msgBoard);

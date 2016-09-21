@@ -1,0 +1,38 @@
+<div class="page-header">
+    <h1>{{name}}</h1>
+</div>
+
+<div class="row border-bottom mrg20B pad20B">
+    <form name="userForm">
+    <div class="clearfix pad20B">
+        <div class="col-md-1 text-right">标题</div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" required ng-model="title" />
+        </div>
+    </div>
+    <div class="clearfix pad20B">
+        <div class="col-md-1 text-right">内容</div>
+        <div class="col-md-3">
+            <textarea cols="80" rows="5" class="form-control" required ng-model="content"></textarea>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+        <button type="submit" class="btn btn-success" ng-click="submit()">提交</button>
+        </div>
+    </div>
+    </form>
+</div>
+
+<div class="row pad50B">
+    <h3>客户留言</h3>
+    <div class="pad10A border-bottom font-size-12" ng-repeat="item in list">
+        <p class="">
+            <span>标题:{{item.title}}</span>
+            <span class="mrg15L">名字:{{item.user}}</span>
+            <span class="mrg15L">时间:{{item.date | date:'yyyy-mm-dd hh:mm'}}</span>
+        </p>
+        <p class="">内容:{{item.content}}</p>
+    </div>
+</div>

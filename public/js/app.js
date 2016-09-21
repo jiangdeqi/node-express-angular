@@ -50,6 +50,11 @@ app.config(
 						}
 					]
 				}
+			})
+			.state('msgBoard', {
+				url: '/msgBoard',
+  				templateUrl: '/public/partials/msg-board.html',
+				controller:'msgBoardCtrl'
 			});
         //$locationProvider.html5Mode(true); 
 	}
