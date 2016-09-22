@@ -157,7 +157,7 @@ router.post('/addMsgBoard', function(req, res) {
             console.log(err + '错误');
             res.send('error');
         } else {
-            res.send({'code':'success'});
+            res.send({'code':'success',"data":doc});
         }
     });
 });

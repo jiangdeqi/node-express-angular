@@ -1,5 +1,8 @@
 
-body { padding-top: 50px; }
+body { 
+  padding-top: 50px;
+  font-family: "微软雅黑";
+}
 .result-table {
   margin: 20px 0;
   width: 100%;

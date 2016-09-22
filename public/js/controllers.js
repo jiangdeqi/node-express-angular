@@ -27,10 +27,11 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
 //用户列表list
 app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.name = '列表展示，删除功能';
+    //获取用户列表数据
     $http.post('/findUser', '').success(function(data) {
         $scope.list = data;
     });
-
+    //删除用户
     $scope.del = function(item) {
         var myid = {
             userid: item.userid
@@ -46,12 +47,12 @@ app.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
 
 //书籍列表new
 app.controller('NewCtrl', ['$scope', '$http', 'dialog', function($scope, $http, dialog) {
-    $scope.name = '书籍列表。。';
-
+    $scope.name = '书籍列表';
+    //获取书籍数据
     $http.post('/books', '').success(function(data) {
         $scope.list = data;
     });
-
+    //打开编辑面板
     $scope.edit = function(item) {
         dialog.show('public/partials/new-edit.html', 'newEdit', 'lg', {
             item: function() {
@@ -59,7 +60,7 @@ app.controller('NewCtrl', ['$scope', '$http', 'dialog', function($scope, $http, 
             }
         }, function(data) {
             //回传
-        })
+        });
     }
 
 }]);
@@ -68,13 +69,12 @@ app.controller('NewCtrl', ['$scope', '$http', 'dialog', function($scope, $http, 
 app.controller('newEdit', ['$scope', '$compile', '$uibModalInstance', 'item', '$http',
     function($scope, $compile, $uibModalInstance, item, $http) {
         $scope.query = item;
-
+        //关闭按钮
         $scope.close = function() {
             $uibModalInstance.close('save');
         }
-
+        //保存
         $scope.save = function() {
-
             $http.post('/upDataBooks', $scope.query).success(function(data) {
                 if (data == 'success') {
                     console.log("添加成功");
@@ -123,7 +123,8 @@ app.controller('msgBoardCtrl', ['$scope', '$http', function($scope, $http) {
                 'date': new Date()
             }).success(function(data) {
                 if (data.code == 'success') {
-                    location.reload();
+                    //location.reload(); 这个刷新低端F5
+                    $scope.list.push(data.data);
                 } else {
                     console.log("添加失败");
                 }
