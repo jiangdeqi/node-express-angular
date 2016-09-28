@@ -1,14 +1,23 @@
 # node-express-angular
-# 下载下来后 安装依赖
+本项目是由nodeJS+express做的后端，模板用的jade，前端用的angularJS+bootstrap  ，mongodb做的数据库。
 
-# npm install
-# bower install
+主要实现 增 删 查 改功能.  
+socket 实现聊天室.
+引入百度Echarts做了个图表例子。
+本项目纯属个人娱乐。如果有什么问题可以联系我QQ:36637737
+
+
+#安装
+首先保证你安装好nodeJS
+
+下载后 需要安装依赖
+
+npm install
+bower install
 
 # 启动
-# node app
+node app
 
 #数据库未上传mongodb
 
-#
-#
-#
+
