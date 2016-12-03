@@ -12,7 +12,11 @@ socket 实现聊天室.
 
 下载后 需要安装依赖
 
+先npm安装插件
 npm install
+
+
+在bower安装插件
 bower install
 
 ## 启动
