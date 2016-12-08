@@ -22,10 +22,18 @@ router.get('/login', function(req, res) {
         title: 'login'
     });
 });
+
 /*logout 页面*/
 router.get('/logout', function(req, res) {
     res.render('logout', {
         title: 'io聊天室'
+    });
+});
+
+/*canvas 页面*/
+router.get('/canvas', function(req, res) {
+    res.render('canvas', {
+        title: 'canvas 绘图'
     });
 });
 
