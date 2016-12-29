@@ -6,16 +6,17 @@ html
     meta(name='format-detection', content='email=no')
     meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0', name='viewport')
     title canvas 绘图
+    link(rel='stylesheet' href='/public/css/canvas.css')
     script(type='text/javascript', src='/public/js/assets/jquery.js')
     script(type='text/javascript', src='/public/js/canvas.js')
   body
+    h2(style="text-aling:center") canvas 绘图
+    div(class="cvs-button")
+      div
+        input(type="text" class="textval")
+        button(id="addText") 添加文字
+      button(id="addImages") 添加图片
+      button(id="generateImage") 生成图片
+    canvas(id="canvas" width="550" height="550")
 
-    #chatbox(style='width:100%')
-      div(style='background:#3d3d3d;height: 28px; width: 100%;font-size:12px;')
-        div(style='line-height: 28px;color:#fff;')
-          span(style='text-align:left;margin-left:10px;') 技术聊天室
-          span(style='float:right; margin-right:10px;')
-            span#showusername
-            |  
-            a(href='javascript:;', onclick='CHAT.logout()', style='color:#fff;') 退出
-
+//- https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Transformations
