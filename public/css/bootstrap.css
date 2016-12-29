@@ -1108,14 +1108,8 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   outline: thin dotted;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-  outline: thin dotted;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
+
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2546,14 +2540,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   outline: thin dotted;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-  outline: thin dotted;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3045,14 +3032,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   outline: thin dotted;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
-=======
-  outline: thin dotted;
->>>>>>> 64073badafd8fc66994dc0c2834853bf2541e93a
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -6032,7 +6012,6 @@ button.close {
   white-space: normal;
   filter: alpha(opacity=0);
   opacity: 0;
-
   line-break: auto;
 }
 .tooltip.in {
@@ -6157,7 +6136,6 @@ button.close {
   border-radius: 6px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-
   line-break: auto;
 }
 .popover.top {
