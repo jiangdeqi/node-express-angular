@@ -15,8 +15,10 @@ socket 实现聊天室.
 先npm安装插件
 npm install
 
+全局安装bower
+npm install bower -g 
 
-在bower安装插件
+使用bower安装插件
 bower install
 
 ## 启动
